@@ -62,6 +62,9 @@ public class Application {
         System.out.println("**********************DOPO DELLA RIMOZIONE**********************");
         archivio.stampaCatalogo();
 
+        System.out.println("**********************RICERCA ISBN**********************");
+        System.out.println(archivio.cercaPerIsbn(libroPersonalizzato.getCodiceIsbn()));
+
         System.out.println("**********************RICERCA PER AUTORE**********************");
         System.out.println(archivio.cercaPerAutore("ME"));
 

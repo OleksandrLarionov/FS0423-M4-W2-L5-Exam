@@ -30,10 +30,16 @@ public class Archivio {
     }
 
     public List<Catalogo> cercaPerAnno (int anno){
-        if (anno < 1800 || anno > 2023) {
+        if (anno < 1800 || anno > 2023 ) {
             throw new IllegalArgumentException("Nel Archivio non ci sono libri con questa data");
         }
         return catalogo.stream().filter(libro -> libro.getAnnoDiPubblicazione() == anno).toList();
+    }
+    public List<Catalogo> cercaPerIsbn (Long isbn){
+        if (isbn == null) {
+            throw new IllegalArgumentException("Non è UN ISBN Valido");
+        }
+        return catalogo.stream().filter(libro -> libro.getCodiceIsbn() == isbn).toList();
     }
 
     public List<Catalogo> getCatalogo() {
