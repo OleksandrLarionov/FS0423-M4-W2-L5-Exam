@@ -1,19 +1,17 @@
 package Larionov.entities;
 
-import java.time.LocalDate;
-
 public class Libri extends Catalogo{
-private String Autore;
+private String autore;
 private Genere genere;
 
-    public Libri(String titolo, int annoDiPubblicazione, int numeroDiPagine, String autore, Genere genere) {
+    public Libri(String titolo, int annoDiPubblicazione, int numeroDiPagine, Genere genere, String autore ) {
         super(titolo, annoDiPubblicazione, numeroDiPagine);
-        Autore = autore;
+        this.autore = autore;
         this.genere = genere;
     }
 
     public String getAutore() {
-        return Autore;
+        return autore;
     }
 
     public Genere getGenere() {

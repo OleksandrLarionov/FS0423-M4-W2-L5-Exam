@@ -16,7 +16,18 @@ public class Archivio {
     public void rimuoviDalCatalogoPerIsbn(Long isbn){
         catalogo = catalogo.stream().filter(articolo -> articolo.getCodiceIsbn() != isbn).toList();
     }
+
+    public void stampaCatalogo(){
+        catalogo.stream().forEach(System.out::println);
+    }
     public void salvaSuDisco(){};
+    
     public void caricaDaDisco(){};
 
+    @Override
+    public String toString() {
+        return "Archivio{" +
+                "catalogo=" + catalogo +
+                '}';
+    }
 }

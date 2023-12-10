@@ -1,7 +1,5 @@
 package Larionov.entities;
 
-import java.time.LocalDate;
-import java.util.List;
 import java.util.Random;
 
 public abstract class Catalogo {
