@@ -7,11 +7,11 @@ import java.util.Random;
 public abstract class Catalogo {
     private long CodiceIsbn;
     private String Titolo;
-    private LocalDate AnnoDiPubblicazione;
+    private int AnnoDiPubblicazione;
     private int NumeroDiPagine;
 
 
-    public Catalogo(String titolo, LocalDate annoDiPubblicazione, int numeroDiPagine) {
+    public Catalogo(String titolo, int annoDiPubblicazione, int numeroDiPagine) {
         Random rndm = new Random();
         CodiceIsbn = rndm.nextInt(1,100000);
         Titolo = titolo;
@@ -28,7 +28,7 @@ public abstract class Catalogo {
         return Titolo;
     }
 
-    public LocalDate getAnnoDiPubblicazione() {
+    public int getAnnoDiPubblicazione() {
         return AnnoDiPubblicazione;
     }
 
