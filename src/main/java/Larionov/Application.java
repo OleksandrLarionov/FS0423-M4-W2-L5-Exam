@@ -28,9 +28,9 @@ public class Application {
             return rndm.nextInt(50,452);
         };
 
-        Supplier<Libri> booksSupplier = () -> new Libri(faker.gameOfThrones().character(),supplieruplyYear.get(),supplieruplyRandomPages.get(), Genere.Fantasy, faker.name().firstName());
-        for (int i = 0; i < 100; i++) {
-            archivio.aggiunguiAlCatalogo(booksSupplier.get());
+        Supplier<Libro> booksSupplier = () -> new Libro(faker.gameOfThrones().character(),supplieruplyYear.get(),supplieruplyRandomPages.get(), Genere.Fantasy, faker.name().firstName());
+        for (int i = 0; i < 3; i++) {
+            archivio.aggiungiAlCatalogo(booksSupplier.get());
         }
 
 //        **********************CREAZIONE DELLE REVISTE'**********************")
@@ -40,12 +40,34 @@ public class Application {
             return rndm.nextInt(10,40);
         };
 
-        Supplier<Riviste> revisteSupplier = () -> new Riviste(faker.food().dish(),supplieruplyYear.get(),supplieruplyRandomPagesReviste.get() );
-        for (int i = 0; i < 50; i++){
-            archivio.aggiunguiAlCatalogo(revisteSupplier.get());
+        Supplier<Riviste> revisteSupplier = () -> new Riviste(faker.food().dish(),supplieruplyYear.get(),supplieruplyRandomPagesReviste.get(), Periodicita.SEMESTRALE );
+        for (int i = 0; i < 5; i++){
+            archivio.aggiungiAlCatalogo(revisteSupplier.get());
         }
 
         System.out.println("**********************IL CATALOGO'**********************");
         archivio.stampaCatalogo();
+
+//        **********************RIMUOVI DAL CATALOGO PER ISBN'**********************TEST
+        Libro libroPersonalizzato = new Libro("peppa",2023,200,Genere.Fantasy, "ME");
+        archivio.aggiungiAlCatalogo(libroPersonalizzato);
+
+        System.out.println("**********************PRIMA DELLA RIMOZIONE**********************");
+        archivio.stampaCatalogo();
+
+        System.out.println(libroPersonalizzato.getCodiceIsbn());
+
+//        archivio.rimuoviDalCatalogoPerIsbn(libroPersonalizzato.getCodiceIsbn());
+
+        System.out.println("**********************DOPO DELLA RIMOZIONE**********************");
+        archivio.stampaCatalogo();
+
+        System.out.println("**********************RICERCA PER AUTORE**********************");
+        System.out.println(archivio.cercaPerAutore("ME"));
+
+        System.out.println("**********************RICERCA PER L'ANNO**********************");
+        System.out.println(archivio.cercaPerAnno(2023));
+
+
     }
 }

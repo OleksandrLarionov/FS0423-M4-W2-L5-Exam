@@ -11,7 +11,7 @@ public abstract class Catalogo {
 
     public Catalogo(String titolo, int annoDiPubblicazione, int numeroDiPagine) {
         Random rndm = new Random();
-        CodiceIsbn = rndm.nextInt(1,100000);
+        CodiceIsbn = rndm.nextLong(1,100000);
         Titolo = titolo;
         AnnoDiPubblicazione = annoDiPubblicazione;
         NumeroDiPagine = numeroDiPagine;
@@ -34,6 +34,8 @@ public abstract class Catalogo {
         return NumeroDiPagine;
     }
 
+    public abstract String getAutore();
+
     @Override
     public String toString() {
         return "Catalogo{" +
@@ -43,4 +45,5 @@ public abstract class Catalogo {
                 ", NumeroDiPagine=" + NumeroDiPagine +
                 '}';
     }
+
 }
