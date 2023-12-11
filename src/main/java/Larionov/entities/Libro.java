@@ -1,7 +1,6 @@
 package Larionov.entities;
 
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class Libro extends Catalogo{
 private  String autore;

@@ -1,0 +1,9 @@
+Catalogo{CodiceIsbn=77197, Titolo='Sansa Stark', AnnoDiPubblicazione=1991, NumeroDiPagine=272}
+Catalogo{CodiceIsbn=62180, Titolo='Marwyn', AnnoDiPubblicazione=1944, NumeroDiPagine=389}
+Catalogo{CodiceIsbn=1748, Titolo='Serra Frey', AnnoDiPubblicazione=1900, NumeroDiPagine=103}
+Catalogo{CodiceIsbn=14413, Titolo='Cauliflower Penne', AnnoDiPubblicazione=2020, NumeroDiPagine=32}
+Catalogo{CodiceIsbn=98239, Titolo='Lasagne', AnnoDiPubblicazione=1901, NumeroDiPagine=32}
+Catalogo{CodiceIsbn=96937, Titolo='Kebab', AnnoDiPubblicazione=2007, NumeroDiPagine=36}
+Catalogo{CodiceIsbn=53866, Titolo='Katsu Curry', AnnoDiPubblicazione=1946, NumeroDiPagine=23}
+Catalogo{CodiceIsbn=33036, Titolo='Chicken Fajitas', AnnoDiPubblicazione=1995, NumeroDiPagine=17}
+Catalogo{CodiceIsbn=72470, Titolo='peppa', AnnoDiPubblicazione=2023, NumeroDiPagine=200}

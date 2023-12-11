@@ -3,14 +3,14 @@ package Larionov;
 import Larionov.entities.*;
 import com.github.javafaker.Faker;
 
-import java.util.List;
+import java.io.IOException;
 import java.util.Locale;
 import java.util.Random;
 import java.util.function.Supplier;
 
 public class Application {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Faker faker = new Faker(Locale.ITALY);
 //        **********************CREAZIONE DELL'ARCHIVIO'**********************
         Archivio archivio = new Archivio();
@@ -70,6 +70,15 @@ public class Application {
 
         System.out.println("**********************RICERCA PER L'ANNO**********************");
         System.out.println(archivio.cercaPerAnno(2023));
+
+//        "**********************SCRITTURA SU DISCO**********************"
+//        archivio.salvaSuDisco(archivio.getCatalogo());
+
+        System.out.println("**********************LETTURA DAL DISCO**********************");
+        System.out.println(archivio.caricaDaDisco());
+
+
+
 
 
     }

@@ -1,8 +1,14 @@
 package Larionov.entities;
 
-import javax.swing.plaf.PanelUI;
+import org.apache.commons.io.FileUtils;
+
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class Archivio {
     private List<Catalogo> catalogo;
@@ -46,9 +52,22 @@ public class Archivio {
         return catalogo;
     }
 
-    public void salvaSuDisco(){};
+    public void salvaSuDisco(List<Catalogo> list){
+        File file = new File("src/main/java/Larionov/data/output.txt");
+        try {
+            List<String> catalogoStrings = list.stream().map(Catalogo::toString).toList();
 
-    public void caricaDaDisco(){};
+            FileUtils.writeLines(file, StandardCharsets.UTF_8.toString(), catalogoStrings);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    };
+
+    public String caricaDaDisco() throws IOException {
+        File file = new File("src/main/java/Larionov/data/output.txt");
+        String contenuto = FileUtils.readFileToString(file, StandardCharsets.UTF_8);
+        return contenuto;
+    };
 
     @Override
     public String toString() {
